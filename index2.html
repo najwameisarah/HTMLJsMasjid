@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+     canvas {
+      border: 1px solid black;
+      display: block;
+      margin: 0 auto;
+    }
+</style>
+<body>
+    <!-- /bikin canvas style/ -->
+     <canvas id="canvas" width="620" height="300"style="border:1px solid black;"></canvas>
+
+     <!-- bikinin dinding masjid yang mana terdapat shadow -->
+
+     <script>
+        // ambil canvas
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        //set shadow color
+        ctx.shadowColor = "lightblue";
+        ctx.shadowBlur = 8;
+        ctx.shadowOffsetX = 10;
+        ctx.shadowOffsetY = 10;
+        //draw half circle
+        ctx.beginPath();
+        ctx.arc(300, 200, 100, Math.PI, 0, false);
+        ctx.fillStyle = '#000099';
+        ctx.fill();
+        ctx.stroke();
+        
+        // set shadow dinding canvas
+        ctx.shadowColor = "lightblue";
+        ctx.shadowBlur = 8;
+        ctx.shadowOffsetX = 10;
+        ctx.shadowOffsetY = 10;
+       // gambar dinding canvas
+        ctx.fillStyle = 'darkblue';
+        ctx.fillRect(150, 200, 300, 150);
+        
+        // gambar shadow dinding
+        ctx.shadowColor = 'black';
+        ctx.shadowBlur = 20;
+        ctx.shadowOffsetX = 5;
+        ctx.shadowOffsetY = 10;
+
+        // gambar pintu
+        ctx.fillStyle = 'lightblue';
+        ctx.fillRect(258, 250, 90, 90);
+
+        //gambar menara kanan
+        ctx.fillStyle = '#000080';
+        ctx.fillRect(450, 150, 50, 200);
+
+        //gambar menara kiri
+        ctx.fillStyle = '#000080';
+        ctx.fillRect(100, 150, 50, 200);
+        
+        //gambar kubah menara kanan
+        ctx.beginPath();
+        ctx.arc(475, 150, 25, Math.PI, 0, false);
+        ctx.fillStyle = '#0000b3';
+        ctx.fill();
+        ctx.stroke();
+
+        //gambar kubah menara kiri
+        ctx.beginPath();
+        ctx.arc(125, 150, 25, Math.PI, 0, false);
+        ctx.fillStyle = '#0000b3';
+        ctx.fill();
+        ctx.stroke();
+        
+       
+    </script>
+        
+</body>
+</html>

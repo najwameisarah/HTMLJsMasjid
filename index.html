@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gambar Masjid 2D</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="myCanvas" width="600" height="400"></canvas>
+
+<script>
+  var canvas = document.getElementById('myCanvas');
+  var ctx = canvas.getContext('2d');
+
+  // Menggambar dinding masjid
+  ctx.fillStyle = '#b5651d';
+  ctx.fillRect(150, 200, 300, 150);
+
+  // Menggambar pintu
+  ctx.fillStyle = '#654321';
+  ctx.fillRect(260, 270, 80, 80);
+
+  // Menggambar kubah
+  ctx.beginPath();
+  ctx.arc(300, 200, 100, Math.PI, 0, false); // kubah setengah lingkaran
+  ctx.fillStyle = '#228b22';
+  ctx.fill();
+  ctx.stroke();
+
+  // Menggambar menara kiri
+  ctx.fillStyle = '#b5651d';
+  ctx.fillRect(100, 150, 50, 200);
+  
+  ctx.beginPath(); 
+  ctx.arc(125, 150, 25, Math.PI, 0, false); // kubah menara kiri
+  ctx.fillStyle = '#228b22';
+  ctx.stroke();
+
+  // Menggambar menara kanan
+  ctx.fillStyle = '#b5651d';
+  ctx.fillRect(450, 150, 50, 200);
+
+  ctx.beginPath();
+  ctx.arc(475, 150, 25, Math.PI, 0, false); // kubah menara kanan
+  ctx.fillStyle = '#228b22';  
+  ctx.stroke();
+</script>
+
+</body>
+</html>
